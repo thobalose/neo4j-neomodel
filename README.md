@@ -1,4 +1,4 @@
-# starting_neomodel
+# neo4j_neomodel
 Getting started with neomodel
 
 ## Usage
