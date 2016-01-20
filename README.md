@@ -33,6 +33,7 @@ $ chmod +x run.sh && ./run.sh
 **To restore your data:** 
 
 * Stop neo4j and clean out a existing `graph.db` folder, and restore the original `graph.db` folder from your backup:
+
   ```
   $ neo4j stop
   $ cd data
