@@ -6,10 +6,11 @@ Getting started with neomodel
 **Make sure [Neo4j](http://neo4j.com/download/other-releases/) is running first!**
 
 ```
-$ $NEO4J_HOME/bin/neo4j status
+$ cd path/to/neo4j/bin
+$ neo4j status
 ```
 
-**Backup and delete existing data:**
+**[Backup](http://stackoverflow.com/questions/25567744/backup-neo4j-community-edition-offline-in-unix-mac-or-linux?answertab=active#tab-top) and delete existing data:**
 
 * Backup: Stop Neo4j and copy the `graph.db` folder:
   ```
@@ -36,7 +37,7 @@ $ chmod +x run.sh && ./run.sh
 
   ```
   $ neo4j stop
-  $ cd data
+  $ cd path/to/neo4j/data
   $ rm -rf graph.db
   $ tar -zxf backup_graph.db.tar.gz
   ```
