@@ -1,5 +1,5 @@
 from model import *
-from neomodel import UniqueProperty
+from neomodel import UniqueProperty, DoesNotExist
 from datetime import date
 
 
@@ -19,3 +19,30 @@ class ctrlModel():
             Reader(name='Mary', born=date(1985, 03, 07)).save()
         except UniqueProperty, e:
             raise e
+
+
+def searchNodes(name):
+    try:
+        print 'Searching Node with Name=', name
+        # Search all nodes with Label Author
+        node = Author.nodes.get(name=name)
+        # If this is found, print its attributes
+        print node.labels(), 'Name =', node.name, 'Born:', node.born
+        return node
+    except DoesNotExist, e:
+        pass
+    try:
+        # Searching all nodes with Label Book
+        node = Book.nodes.get(title=name)
+        print node.labels(), 'Title =', node.title, 'Published:', node.published
+        return node
+    except DoesNotExist, e:
+        pass
+    try:
+        # Search all nodes with Label Reader
+        node = Reader.nodes.get(name=name)
+        print node.labels(), 'Name =', node.name, 'Born:', node.born
+        return node
+    except Exception, e:
+        pass
+    print 'We could not find any node with attribute:', name, '. Please try again.'

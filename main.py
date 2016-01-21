@@ -5,4 +5,5 @@ if __name__ == '__main__':
     print 'ctrlNodes...'
     create = ctrlModel()
     create.ctrlNodes()
+    searchNodes('Here be dragons')
     print 'Done!'
