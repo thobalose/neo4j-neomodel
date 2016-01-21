@@ -6,8 +6,10 @@ class Author(StructuredNode):
     # Names shoud not be duplicate (Unique_Index=True)
     # http://neo4j.com/docs/stable/query-constraints.html
     name = StringProperty(Unique_Index=True, required=True)
+    # The DateProperty accepts datetime.date objects which are stored as a
+    # string property YYYY-MM-DD
     born = DateProperty()
-    died = DateProperty()
+    died = DateProperty(default=None)
 
 
 class Book(StructuredNode):
