@@ -1,5 +1,5 @@
 # neo4j_neomodel
-Getting started with neomodel
+Getting started with [neomodel](https://github.com/robinedwards/neomodel)
 
 ## Usage
 
