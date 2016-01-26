@@ -23,7 +23,7 @@ $ neo4j status
   ```
   $ neo4j-shell
   neo4j-sh (?)$ match (x)-[r]-(y) delete x,r,y;
-  neo4j-sh (?)$ match (n) delete (n);
+  neo4j-sh (?)$ match (x) delete (x);
   ```
 
 **Run:**
