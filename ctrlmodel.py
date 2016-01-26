@@ -20,6 +20,25 @@ class ctrlModel():
         except UniqueProperty, e:
             raise e
 
+    def createWroteRel(self):
+        try:
+            print 'Start creating WROTE relationship between given nodes'
+            searchNodes('Pless').wrote.connect(searchNodes('Here be dragons'))
+            searchNodes('Lucy').wrote.connect(searchNodes('Initial Commit'))
+            print 'Done creating WROTE relationship between given nodes'
+        except Exception, e:
+            raise e
+
+    def createReadRel(self):
+        try:
+            print 'Start creating READ relationship between given nodes'
+            searchNodes('John').read.connect(searchNodes('Here be dragons'))
+            searchNodes('John').read.connect(searchNodes('Initial Commit'))
+            searchNodes('Mary').read.connect(searchNodes('Initial Commit'))
+            print 'Done creating READ relationship between given nodes'
+        except Exception, e:
+            raise e
+
 
 def searchNodes(name):
     try:

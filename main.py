@@ -6,4 +6,6 @@ if __name__ == '__main__':
     create = ctrlModel()
     create.ctrlNodes()
     searchNodes('Here be dragons')
+    create.createWroteRel()
+    create.createReadRel()
     print 'Done!'

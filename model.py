@@ -1,4 +1,4 @@
-from neomodel import (StructuredNode, StringProperty, DateProperty)
+from neomodel import (StructuredNode, StringProperty, DateProperty, RelationshipTo, OneOrMore)
 
 
 class Author(StructuredNode):
@@ -10,6 +10,8 @@ class Author(StructuredNode):
     # string property YYYY-MM-DD
     born = DateProperty()
     died = DateProperty(default=None)
+
+    wrote = RelationshipTo('Book', 'WROTE', OneOrMore)
 
 
 class Book(StructuredNode):
@@ -24,3 +26,5 @@ class Reader(StructuredNode):
 
     name = StringProperty(Unique_Index=True, required=True)
     born = DateProperty()
+
+    read = RelationshipTo('Book', 'READ', OneOrMore)
