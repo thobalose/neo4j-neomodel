@@ -44,8 +44,8 @@ class ctrlModel():
             print 'Start creating RECOMMENDED relationship between given nodes'
             searchNodes('John').recommended.connect(
                 searchNodes('Here be dragons'), {'date': date(1995, 1, 12)})
-            # searchNodes('John').recommended.connect(
-            #     searchNodes('Initial Commit'), {'date': date(1997, 11, 1)})
+            searchNodes('Pless').recommended.connect(
+                searchNodes('Here be dragons'), {'date': date(1997, 11, 1)})
             searchNodes('Mary').recommended.connect(
                 searchNodes('Initial Commit'), {'date': date(2005, 6, 3)})
             print 'Done creating RECOMMENDED relationship between given nodes'
