@@ -39,6 +39,19 @@ class ctrlModel():
         except Exception, e:
             raise e
 
+    def createRecommendedRel(self):
+        try:
+            print 'Start creating RECOMMENDED relationship between given nodes'
+            searchNodes('John').recommended.connect(
+                searchNodes('Here be dragons'), {'date': date(1995, 1, 12)})
+            # searchNodes('John').recommended.connect(
+            #     searchNodes('Initial Commit'), {'date': date(1997, 11, 1)})
+            searchNodes('Mary').recommended.connect(
+                searchNodes('Initial Commit'), {'date': date(2005, 6, 3)})
+            print 'Done creating RECOMMENDED relationship between given nodes'
+        except Exception, e:
+            raise e
+
 
 def searchNodes(name):
     try:
@@ -62,6 +75,6 @@ def searchNodes(name):
         node = Reader.nodes.get(name=name)
         print node.labels(), 'Name =', node.name, 'Born:', node.born
         return node
-    except Exception, e:
+    except DoesNotExist, e:
         pass
     print 'We could not find any node with attribute:', name, '. Please try again.'
