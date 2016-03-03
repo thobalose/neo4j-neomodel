@@ -27,9 +27,18 @@ $ neo4j status
   ```
 
 **Run:**
-```
-$ chmod +x run.sh && ./run.sh
-```
+* Recommended:
+  * Add the following to `~/.bashrc`:
+
+    ```
+    export NEO4J_REST_URL=http://neo4j_username:Neo4j_passwd@localhost:7474/db/data/
+    ```
+
+* Maybe (still to be improved...)
+
+  ```
+  $ chmod +x set_env.sh && ./set_env.sh
+  ```
 
 **To restore your data:** 
 
