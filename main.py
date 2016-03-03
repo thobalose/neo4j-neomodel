@@ -8,4 +8,5 @@ if __name__ == '__main__':
     searchNodes('Here be dragons')
     create.createWroteRel()
     create.createReadRel()
+    create.createRecommendedRel()
     print 'Done!'

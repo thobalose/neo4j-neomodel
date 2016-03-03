@@ -1,5 +1,10 @@
-from neomodel import (StructuredNode, StringProperty, DateProperty, RelationshipTo, OneOrMore)
+from neomodel import (StructuredNode, StructuredRel,
+                      StringProperty, DateProperty, RelationshipTo, OneOrMore)
 
+
+class Recommended(StructuredRel):
+    """docstring for Recommended"""
+    date = DateProperty(default=None)
 
 class Author(StructuredNode):
     print 'Class for Author nodes'
@@ -12,7 +17,7 @@ class Author(StructuredNode):
     died = DateProperty(default=None)
 
     wrote = RelationshipTo('Book', 'WROTE', OneOrMore)
-
+    recommended = RelationshipTo('Book', 'RECOMMENDED', OneOrMore, model=Recommended)
 
 class Book(StructuredNode):
     print 'Class for Book nodes'
@@ -28,3 +33,4 @@ class Reader(StructuredNode):
     born = DateProperty()
 
     read = RelationshipTo('Book', 'READ', OneOrMore)
+    recommended = RelationshipTo('Book', 'RECOMMENDED', OneOrMore, model=Recommended)
