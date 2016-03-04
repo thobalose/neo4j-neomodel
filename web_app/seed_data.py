@@ -3,7 +3,7 @@ from ctrlmodel import *
 
 
 if __name__ == '__main__':
-  print 'ctrlNodes...'
+  deleteData() # Start by deleting existing data
   create = ctrlModel()
   create.ctrlNodes()
   # searchNodes('Here be dragons')

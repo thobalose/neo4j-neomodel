@@ -1,5 +1,5 @@
 from model import *
-from neomodel import UniqueProperty, DoesNotExist
+from neomodel import UniqueProperty, DoesNotExist, db
 from datetime import date
 
 
@@ -80,4 +80,10 @@ def searchNodes(name):
     except DoesNotExist, e:
         pass
     print 'We could not find any node with attribute:', name, '. Please try again.'
-    return 'We could not find any node with attribute:', name, '. Please try again.'
+    # return 'None'
+
+
+def deleteData():
+    print 'Delete all nodes and relationships...'
+    query = 'MATCH (n) DETACH DELETE n'
+    db.cypher_query(query)
