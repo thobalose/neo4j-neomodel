@@ -1,6 +1,8 @@
 # neo4j_neomodel
 Getting started with [neomodel](https://github.com/robinedwards/neomodel)
 
+![Result](https://github.com/thobalose/neo4j_neomodel/blob/master/neo4j_neomodel.png "Resulting Graph")
+
 ## Usage
 
 **Make sure [Neo4j](http://neo4j.com/download/other-releases/) is running first!**
