@@ -26,19 +26,22 @@ $ neo4j status
   neo4j-sh (?)$ match (x) delete (x);
   ```
 
-**Run:**
-* Recommended:
+**To Run:**
   * Add the following to `~/.bashrc`:
 
     ```
+    export NEO4J_PASSWD=neo4j_user
+    export NEO4J_PASSWD=neo4j_passwd
     export NEO4J_REST_URL=http://neo4j_username:Neo4j_passwd@localhost:7474/db/data/
     ```
 
-* Maybe (still to be improved...)
+  * Run: 
 
-  ```
-  $ chmod +x set_env.sh && ./set_env.sh
-  ```
+    ```
+    $ chmod +x run.sh && ./run.sh
+    ```
+
+  * Point your browser to: `http://localhost:5000/`
 
 **To restore your data:** 
 
