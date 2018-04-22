@@ -7,7 +7,6 @@ from model import Author, Book, Reader
 
 DB = os.getenv("DATABASE_URL", "localhost")
 config.DATABASE_URL = "bolt://neo4j:''@{DB}:7687".format(DB=DB)
-print(db.url)
 
 
 class ctrlModel():
@@ -68,7 +67,7 @@ def searchNodes(name):
         # If this is found, print its attributes
         print node.labels(), 'Name =', node.name, 'Born:', node.born
         return node
-    except DoesNotExist, e:
+    except DoesNotExist:
         pass
     try:
         # Searching all nodes with Label Book
@@ -76,7 +75,7 @@ def searchNodes(name):
         node = Book.nodes.get(title=name)
         print node.labels(), 'Title =', node.title
         return node
-    except DoesNotExist, e:
+    except DoesNotExist:
         pass
     try:
         print 'Searching Reader Node with Name=', name
@@ -84,9 +83,8 @@ def searchNodes(name):
         node = Reader.nodes.get(name=name)
         print node.labels(), 'Name =', node.name, 'Born:', node.born
         return node
-    except DoesNotExist, e:
-        raise e
-    print 'We could not find any node with attribute:', name, '.'
+    except DoesNotExist:
+        return None
     # return 'None'
 
 

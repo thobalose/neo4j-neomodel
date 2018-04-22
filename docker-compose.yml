@@ -4,12 +4,14 @@ services:
     restart: always
     build: .
     environment:
-      DATABASE_URL: neo4jdb
+      DATABASE_URL: db
     ports:
       - "5000:5000"
+    volumes:
+     - .:/code
     depends_on:
-      - neo4jdb
-  neo4jdb:
+      - db
+  db:
      image: neo4j:3.3
      environment:
        NEO4J_AUTH: none

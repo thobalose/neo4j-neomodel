@@ -1,4 +1,4 @@
-FROM python:2.7-slim
+FROM python:2.7
 LABEL maintainer="thoba@sanbi.ac.za"
 
 RUN apt-get update -y --fix-missing \
